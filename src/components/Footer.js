@@ -22,7 +22,6 @@ const Footer = () => {
             </div>
             <div className="text-center text-secondary pt-4">Copyright &copy; 2021 Powered by gitJanaeW</div>
         </footer>
-        
     );
 }
 
