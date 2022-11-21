@@ -2,9 +2,11 @@ import React from "react";
 // icons
 import {GrMysql} from 'react-icons/gr';
 import {BiCodeCurly} from 'react-icons/bi';
+import {IoMdDownload} from 'react-icons/io';
 import { AiOutlineTable, AiFillFolderOpen} from 'react-icons/ai';
 import {FaReact, FaNodeJs} from 'react-icons/fa';
 import {
+    SiHtml5,
     SiCss3, 
     SiJavascript, 
     SiMongodb, 
@@ -17,7 +19,7 @@ import {
 
 const Resume = () => {
     return(
-        <section id="resume" className="col-9 col-lg-8 mx-auto my-4">
+        <section id="resume" className="col-9 col-lg-8 mx-auto my-4 text-center">
             <div>
                 <div>
                     <h1>Resume</h1>
@@ -29,15 +31,14 @@ const Resume = () => {
                 <div>
                     <div>
                         <div>
-                            {/* <img className="my-5 w-40 max-sm:w-1/3 object-cover rounded-full" src={headshot} alt="A headshot of Janae smiling in business casual wear" layout="fill"/> */}
-                            <h2>TECHNICAL SKILLS</h2>
-                            <div className="d-flex flex-wrap flex-column text-center text-secondary" style={{height: "400px"}}>
+                            <h2 className="mb-4">TECHNICAL SKILLS</h2>
+                            <div className="d-flex flex-wrap flex-column text-secondary" style={{height: "400px"}}>
                                 <div>
                                     <SiJavascript size={28}/>
                                     <p>JavaScript</p>
                                 </div>
                                 <div>
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="28" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M145.2 96l66 746.6L512 928l299.6-85.4L878.9 96H145.2zm595 177.1l-4.8 47.2-1.7 19.5H382.3l8.2 94.2h335.1l-3.3 24.3-21.2 242.2-1.7 16.2-187 51.6v.3h-1.2l-.3.1v-.1h-.1l-188.6-52L310.8 572h91.1l6.5 73.2 102.4 27.7h.4l102-27.6 11.4-118.6H510.9v-.1H306l-22.8-253.5-1.7-24.3h460.3l-1.6 24.3z"></path></svg>
+                                    <SiHtml5 size={28}/>
                                     <p>HTML</p>
                                 </div>
                                 <div>
@@ -96,33 +97,36 @@ const Resume = () => {
                         </div>  
                     </div>
                     <div>
-                    <h2>EDUCATION</h2>
+                    <h2 className="mb-4">EDUCATION</h2>
                         <div className="text-wrap">
-                                <h3>Carelton University Full-Stack Development Boot Camp</h3>
+                                <h5 className="mb-0">Carelton University Full-Stack Development Boot Camp</h5>
                                 <p>(May 2022 - Nov 2022)</p>
-                                <p>
-                                    Cultivated comprehensive skill set in full-stack technologies through prescribed and independent research. Avid participant and team player in class and during projects. Respected by peers and faculty.
+                                <p className="mb-3 mt-2">
+                                    Cultivated comprehensive skill set in full-stack technologies through assigned and independent research. Avid participant and team player in class and during projects. Respected by peers and faculty.
                                 </p>
-                                <h3>Ryerson University</h3>
+                                <h5 className="mb-0">Ryerson University</h5>
                                 <p>(Sept 2019 - Apr 2022)</p>
-                                <p>
+                                <p className="mb-3 mt-2">
                                     Consistent Dean's List honoree, achieving a BA in English with distinction.
                                 </p>
-                                <h3>University of Waterloo</h3>
+                                <h5 className="mb-0">University of Waterloo</h5>
                                 <p>(Sept 2017 - Dec 2018)</p>
-                                <p>
+                                <p className="mb-3 mt-2">
                                     Consistent Dean's List honoree, specializing in Technical Writing.
                                 </p>
                         </div>
                         <h2>EXPERIENCE</h2>
                         <div className="text-wrap">
-                            <h3>English Tutor & Essay Reviewer</h3>
-                            <p>Paper Co. <span>(Jan 2022 - Present)</span></p>
-                                <p>Empowering students to synthesize their own answers with question-based prompting. Efficiently employing on-the-fly research skills in live sessions. Adapting conceptual explanations to the needs of each student.
-                            </p>
-                            <h3>Educational Consultant</h3>
-                            <p>Sarah Fewson Consulting Co. <span>(Oct 2019 - Present)</span></p>
-                            <p>Providing detailed curriculum-based feedback for children's TV scripts. Delivering criticism constructively, kindly and professionally.</p>
+                            <h5 className="mb-0">English Tutor & Essay Reviewer</h5>
+                            <span>Paper Co. </span>
+                            <span>(Jan 2022 - Present)</span>
+                                <p className="mb-3 mt-2">
+                                    Empowering students to synthesize their own answers with question-based prompting. Efficiently employing on-the-fly research skills in live sessions. Adapting conceptual explanations to the needs of each student.
+                                </p>
+                            <h5 className="mb-0">Educational Consultant</h5>
+                            <span>Sarah Fewson Consulting Co. </span>
+                            <span className="text-nowrap">(Oct 2019 - Present)</span>
+                            <p className="mb-3 mt-2">Providing detailed curriculum-based feedback for children's TV scripts. Delivering criticism constructively, kindly and professionally.</p>
                         </div>
                      </div>
                 </div>
