@@ -18,7 +18,7 @@ const App = () => {
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/resume" element={<Resume/>}/>
                     </Routes>
-                <button className="btn bg-primary bg-gradient">Primary button</button>
+                <button className="btn bg-info bg-gradient">Primary button</button>
                 <Footer/>
             </Router>
         </div>
