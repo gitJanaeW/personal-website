@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import {captializeFirstChar, validateEmail} from "../utils/helpers";
 import {AiFillPhone, AiFillGithub} from 'react-icons/ai';
+import {TbConfetti} from 'react-icons/tb';
 import {MdEmail} from 'react-icons/md';
 import {FaLinkedinIn} from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [emailObj, setEmailObj] = useState();
     const [errorMsg, setErrorMsg] = useState();
+    const [successMsg, setSuccessMsg] = useState();
     // check for live changes to the state of the form
     const getEmailState = (e) => {
         if (e.target.name === 'email') {
@@ -23,23 +26,27 @@ const Contact = () => {
                 setErrorMsg('');
             }
         }
-        if(!errorMsg) {
-            // the spread operator ensures we have access to formState as a whole while also singling out each attribute's
-            // value.
-            // [e.target.name] refers to the name attribute in the preceeding JSX, meaning when the name, email or message
-            // changes, we'll update the target (by its attribute name) with its new value
-            return setEmailObj({...emailObj, [e.target.name]: e.target.value});
+    };
+    const clearToast = (e) => {
+        e.preventDefault();
+        if(e.target.value==="╳"){
+            e.currentTarget.className = "hide toast"
         }
     };
-    const sendEmail = () => {
-        
-    }
-    const logEmail = (e) => {
+    const form = useRef();
+    const sendEmail = (e) => {
         e.preventDefault();
-        console.log(emailObj);
-    };
+        emailjs.sendForm('janae_gmail', 'template_ed06vlo', form.current, 'IRyGugxNdMef1SXwi')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        setSuccessMsg("Thanks for reaching out!");
+        form.current.reset();
+    }
     return(
-        <section id="contact" className="d-flex flex-wrap col-9 mx-auto my-4">
+        <section id="contact" className="d-flex flex-wrap col-9 mx-auto my-5">
             <div className="col-11 col-lg-5 mx-auto text-center text-md-start">
                 <h2>
                     Reach Out
@@ -66,7 +73,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <form className="col-11 col-lg-4 mx-auto mt-3" onSubmit={logEmail}>
+            <form className="col-11 col-lg-4 mx-auto mt-3" ref={form} onSubmit={sendEmail}>
                 <div>
                     <label htmlFor='name' className="fw-bold mb-2">FULL NAME:</label>
                     <br/>
@@ -87,8 +94,19 @@ const Contact = () => {
                 </div>
                 {errorMsg && (<p>{captializeFirstChar(errorMsg)}</p>)}
                 <div className="mt-3">
-                    <button className="btn bg-info bg-gradient border-0">SEND</button>
+                    <button className="btn bg-info bg-gradient border-0" type="submit">SEND</button>
                 </div>
+                {successMsg && (
+                    <div onClick={clearToast} className="bg-info bg-gradient rounded fixed-bottom" role="alert" style={{position: "sticky", bottom:"10px"}}>
+                        <div className="toast-header my-4 d-flex justify-content-between align-items-center">
+                            <div className="d-flex align-items-center px-2">
+                                <TbConfetti/>
+                                <strong className="toast-body">: Email sent!</strong>
+                            </div>
+                            <input type="button" className="close bg-primary border-0 rounded p-3 text-white" value="╳"></input>
+                        </div>
+                    </div>
+                )}
             </form>
         </section>
     );

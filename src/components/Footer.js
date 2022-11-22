@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return(
-        <footer className="my-5">
+        <footer className="footer my-5">
             <div className='text-center'>
                 <a href="https://github.com/gitJanaeW/" target="_blank" rel="noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" fill="#d1d5db" className="bi bi-github" viewBox="0 0 16 16">
