@@ -16,16 +16,16 @@ const Nav = () => {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <div className="navbar-nav" id="navbar-links">
                         <Link to="/">
-                            <h2 className="nav-link" href="#">ABOUT ME</h2>
+                            <h2 className="nav-link fw-bold" href="#">ABOUT ME</h2>
                         </Link>
                         <Link to="/portfolio">
-                            <h2 className="nav-link" href="#">PORTFOLIO</h2>
+                            <h2 className="nav-link fw-bold" href="#">PORTFOLIO</h2>
                         </Link>
                         <Link to="/contact">
-                            <h2 className="nav-link" href="#">CONTACT</h2>
+                            <h2 className="nav-link fw-bold" href="#">CONTACT</h2>
                         </Link>
                         <Link to="/resume">
-                            <h2 className="nav-link" href="#">RESUME</h2>
+                            <h2 className="nav-link fw-bold" href="#">RESUME</h2>
                         </Link>
                     </div>
                 </div>
