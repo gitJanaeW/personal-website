@@ -40,7 +40,7 @@ const Portfolio = () => {
                                     <a href={mainProject.link} target="_blank" onClick={dropdown} rel="noreferrer">
                                         <h4 className="text-white my-2">{mainProject.name}</h4>
                                     </a>
-                                    <p className="bg-info bg-gradient badge text-start text-md-center w-fit p-2 m-md-2">
+                                    <p className="bg-info bg-gradient badge text-start text-md-center w-fit p-2 m-0 m-md-2">
                                         {mainProject.status}
                                     </p>
                                 </div>
