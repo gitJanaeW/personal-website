@@ -18,9 +18,7 @@ const Portfolio = () => {
     return( 
         <section id="portfolio" className="col-9 col-lg-6 mx-auto my-4">
             <div className="text-center">
-                <h1>
-                    Portfolio
-                </h1>
+                <h1>Portfolio</h1>
                 <p>
                     Check out my most pivotal projects from newest to oldest in their respective categories. You can also browse through my large collection of projects on 
                     <a href="https://github.com/gitJanaeW?tab=repositories" target="_blank" rel="noreferrer"> Github</a>!
@@ -54,7 +52,9 @@ const Portfolio = () => {
                                     </div>
                                 </LazyLoad>
                         </div>
-                        <p className={`${mainProject.key} dropdown mx-2`} hidden>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                        <LazyLoad height={100} offset={0} once>
+                            <p className={`${mainProject.key} dropdown mx-2`} hidden>{mainProject.description}</p>
+                        </LazyLoad>
                     </div>
                 ))}
             </div>
