@@ -1,23 +1,19 @@
 import React, {useState} from "react";
 import LazyLoad from "react-lazyload";
 import mainProjects from "../data/mainProjects";
-import {FiChevronDown} from "react-icons/fi";
+import {FiChevronDown, FiChevronUp} from "react-icons/fi";
 
 const Portfolio = () => {
+    const [chvrnOpen, setOpen] = useState(false);
     const dropdown = (e) => {
-        e.preventDefault();
-        const description = document.getElementById("dropdown")
+        setOpen(!chvrnOpen);
+        const project = e.currentTarget.id;
+        const description = document.querySelector(`.${project}`);
         if(description.hasAttribute("hidden")) {
             description.removeAttribute("hidden");
             return;
         }
         description.setAttribute("hidden", true);
-        
-        // description = childDiv.getElementsByTagName('div')[1];
-        // console.log(description)
-        // if(e.target.value==="╳"){
-        //     e.currentTarget.className = "hide toast"
-        // }
     };
     return( 
         <section id="portfolio" className="col-9 col-lg-6 mx-auto my-4">
@@ -53,12 +49,12 @@ const Portfolio = () => {
                                 <p className="text-secondary">{mainProject.technologies}</p>
                             </div>
                                 <LazyLoad height={300} offset={0} once>
-                                    <div className="bg-black" onClick={dropdown}>
-                                        <FiChevronDown size={28}/>
-                                        <p id="dropdown" hidden>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                                    <div id={`${mainProject.key}`} onClick={dropdown}>
+                                        {chvrnOpen ? (<FiChevronUp size={28}/>) : (<FiChevronDown size={28}/>)}
                                     </div>
                                 </LazyLoad>
                         </div>
+                        <p className={`${mainProject.key} dropdown mx-2`} hidden>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
                     </div>
                 ))}
             </div>
