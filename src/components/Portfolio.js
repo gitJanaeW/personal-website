@@ -1,43 +1,68 @@
-import React from "react";
+import React, {useState} from "react";
 import LazyLoad from "react-lazyload";
 import mainProjects from "../data/mainProjects";
-import {BiChevronDown} from "react-icons/bi";
+import {FiChevronDown} from "react-icons/fi";
 
 const Portfolio = () => {
-    return(
-            <section id="portfolio" className="col-9 col-lg-8 mx-auto my-4 text-center">
-                <h2 className="">
-                  Portfolio
-                </h2>
-                <div className="d-flex flex-column flex-wrap">
-                    {mainProjects.map((mainProject) => (
-                        <div className="d-flex flex-column" key={mainProject.key}>
-                            <a href={mainProject.link} target="_blank" rel="noreferrer">
-                                <LazyLoad height={300} offset={0} once>
-                                    <img className="rounded-xl w-100" style={{objectFit:"cover"}} src={mainProject.img}
-                                    alt={mainProject.imgAlt}/>
-                                </LazyLoad>
-                            </a>
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <div className="flex max-sm:flex-col mt-1">
-                                        <a href={mainProject.link} target="_blank" rel="noreferrer">
-                                            <h2 className="text-2xl max-sm:text-lg max-sm:font-medium mr-2 text-white">{mainProject.name}</h2>
-                                        </a>
-                                        <h3 className="w-fit text-sm text-center flex-none p-1 px-2 rounded-full text-white bg-gradient-to-r from-cyan-500 text- to-teal-500">
-                                            {mainProject.status}
-                                        </h3>
-                                    </div>
-                                    <p className="text-slate-400 pt-2 text-lg">{mainProject.technologies}</p>
+    const dropdown = (e) => {
+        e.preventDefault();
+        const description = document.getElementById("dropdown")
+        if(description.hasAttribute("hidden")) {
+            description.removeAttribute("hidden");
+            return;
+        }
+        description.setAttribute("hidden", true);
+        
+        // description = childDiv.getElementsByTagName('div')[1];
+        // console.log(description)
+        // if(e.target.value==="╳"){
+        //     e.currentTarget.className = "hide toast"
+        // }
+    };
+    return( 
+        <section id="portfolio" className="col-9 col-lg-6 mx-auto my-4">
+            <div className="text-center">
+                <h1>
+                    Portfolio
+                </h1>
+                <p>
+                    Check out my most pivotal projects from newest to oldest in their respective categories. You can also browse through my large collection of projects on 
+                    <a href="https://github.com/gitJanaeW?tab=repositories" target="_blank" rel="noreferrer"> Github</a>!
+                </p>
+                <p className="text-primary">***Please note that, I am currently touching up kinks in my main projects. These changes have not been deployed.***</p>
+            </div>
+            
+            <div className="d-flex flex-column flex-wrap">
+                <h2 className="text-center my-4">MAIN PROJECTS</h2>
+                {mainProjects.map((mainProject) => (
+                    <div className="d-flex flex-column pb-3 mb-3" key={mainProject.key}>
+                        <a href={mainProject.link} target="_blank" rel="noreferrer">
+                                <img className="rounded w-100" style={{objectFit:"cover"}} src={mainProject.img}
+                                alt={mainProject.imgAlt}/>
+                        </a>
+                        <div className="d-flex justify-content-between align-items-start p-2">
+                            <div>
+                                <div className="d-md-flex flex-column flex-md-row my-1">
+                                    <a href={mainProject.link} target="_blank" onClick={dropdown} rel="noreferrer">
+                                        <h4 className="text-white my-2">{mainProject.name}</h4>
+                                    </a>
+                                    <p className="bg-info bg-gradient badge text-start text-md-center w-fit p-2 m-md-2">
+                                        {mainProject.status}
+                                    </p>
                                 </div>
-                                <LazyLoad height={300} offset={0} once>
-                                    <BiChevronDown/>
-                                </LazyLoad>
+                                <p className="text-secondary">{mainProject.technologies}</p>
                             </div>
+                                <LazyLoad height={300} offset={0} once>
+                                    <div className="bg-black" onClick={dropdown}>
+                                        <FiChevronDown size={28}/>
+                                        <p id="dropdown" hidden>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+                                    </div>
+                                </LazyLoad>
                         </div>
-                    ))}
-                </div>
-            </section>
+                    </div>
+                ))}
+            </div>
+        </section>
     );
 };
 

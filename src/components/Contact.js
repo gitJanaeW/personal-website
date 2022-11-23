@@ -48,9 +48,9 @@ const Contact = () => {
     return(
         <section id="contact" className="d-flex flex-wrap col-9 mx-auto my-5">
             <div className="col-11 col-lg-5 mx-auto text-center text-md-start">
-                <h2>
+                <h1>
                     Reach Out
-                </h2>
+                </h1>
                 <p>
                     I'm eager to become an asset to your team! Reach out to me on whatever platform is most convenient and I will be happy to connect with you.
                 </p>    
@@ -94,7 +94,7 @@ const Contact = () => {
                 </div>
                 {errorMsg && (<p>{captializeFirstChar(errorMsg)}</p>)}
                 <div className="mt-3">
-                    <button className="btn bg-info bg-gradient border-0" type="submit">SEND</button>
+                    <button className="bg-info bg-gradient border-0 text-white fw-bold px-3 py-2" type="submit">SEND</button>
                 </div>
                 {successMsg && (
                     <div onClick={clearToast} className="bg-info bg-gradient rounded fixed-bottom" role="alert" style={{position: "sticky", bottom:"10px"}}>

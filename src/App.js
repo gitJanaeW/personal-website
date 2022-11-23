@@ -1,8 +1,8 @@
 import React, {Suspense} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Nav from "./components/Nav";
-import About from "./components/About";
 import Loading from "./components/Loading";
+const About = React.lazy(() => import('./components/About'));
 const Portfolio = React.lazy(() => import('./components/Portfolio'));
 const Contact = React.lazy(() => import('./components/Contact'));
 const Resume =  React.lazy(() => import('./components/Resume'));
@@ -14,7 +14,9 @@ const App = () => {
             <Router>
                 <Nav/>
                     <Routes>
-                        <Route path="/" element={<About/>}/>
+                        <Route path="/" element={
+                            <Suspense fallback={<Loading/>}><About/></Suspense>
+                        }/>
                         <Route path="/portfolio" element={
                             <Suspense fallback={<Loading/>}><Portfolio/></Suspense>
                         }/>

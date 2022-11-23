@@ -8,8 +8,10 @@ const Nav = () => {
     const [clickedResume, setResume] = useState(false);
     const highlight = (e) => {
         e.preventDefault();
+        console.log(window.location.pathname)
         switch (e.target.innerHTML) {
-            case "ABOUT ME":
+            case "ABOUT ME": 
+            case "JANAE WELSH":
                 setAbout(true);
                 setPortfolio(false);
                 setResume(false);
@@ -39,7 +41,7 @@ const Nav = () => {
         }
     }
     return(
-        <nav onClick={highlight} className="navbar navbar-expand-lg navbar-light px-4 py-3">
+        <nav onClick={highlight} className="navbar navbar-expand-lg navbar-light px-4 py-4">
             <Link to="/">
                 <h1 className="navbar-brand font-weight-bold"><strong>JANAE WELSH</strong></h1>
             </Link>
