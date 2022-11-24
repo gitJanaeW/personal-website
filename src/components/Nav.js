@@ -7,39 +7,12 @@ const Nav = () => {
     const [clickedPortfolio, setPortfolio] = useState(false);
     const [clickedContact, setContact] = useState(false);
     const [clickedResume, setResume] = useState(false);
-    const highlight = (e) => {
-        e.preventDefault();
-        console.log(window.location.pathname)
-        switch (e.target.innerHTML) {
-            case "ABOUT ME": 
-            case "JANAE WELSH":
-                setAbout(true);
-                setPortfolio(false);
-                setResume(false);
-                setContact(false);
-                break;
-            case "PORTFOLIO":
-                setAbout(false);
-                setPortfolio(true);
-                setResume(false);
-                setContact(false);
-                break;
-            case "CONTACT":
-                setAbout(false);
-                setPortfolio(false);
-                setResume(false);
-                setContact(true);
-                break;
-            case "RESUME":
-                setAbout(false);
-                setPortfolio(false);
-                setResume(true);
-                setContact(false);
-                break;
-            default:
-                console.log('break');
-                break;
-        }
+    const highlight = () => {
+        const path = window.location.pathname;
+        setAbout(path === "/");
+        setPortfolio(path === "/portfolio");
+        setContact(path === "/contact");
+        setResume(path ==="/resume");
     }
     return(
         <nav onClick={highlight} className="navbar navbar-expand-lg navbar-light px-4 py-4">
@@ -64,7 +37,7 @@ const Nav = () => {
                             <h2 className={`${clickedContact && "bg-info bg-gradient"} nav-link fw-bold px-2`} href="#">CONTACT</h2>
                         </Link>
                         <Link to="/resume">
-                            <h2 className={`${clickedResume && "bg-info bg-gradient"} nav-link fw-bold px-2`} href="#">RESUME</h2>
+                            <h2 className={`${clickedResume && "bg-info bg-gradient"} nav-link fw-bold px-2 ml-2`} href="#">RESUME</h2>
                         </Link>
                     </div>
                 </div>
