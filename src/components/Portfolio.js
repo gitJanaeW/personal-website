@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import LazyLoad from "react-lazyload";
 import mainProjects from "../data/mainProjects";
 import {FiChevronDown, FiChevronUp} from "react-icons/fi";

@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import {useState, useRef} from "react";
 import {captializeFirstChar, validateEmail} from "../utils/helpers";
 import {AiFillPhone, AiFillGithub} from 'react-icons/ai';
 import {TbConfetti} from 'react-icons/tb';
@@ -7,7 +7,6 @@ import {FaLinkedinIn} from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const [emailObj, setEmailObj] = useState();
     const [errorMsg, setErrorMsg] = useState();
     const [successMsg, setSuccessMsg] = useState();
     // check for live changes to the state of the form
@@ -94,7 +93,7 @@ const Contact = () => {
                 </div>
                 {errorMsg && (<p>{captializeFirstChar(errorMsg)}</p>)}
                 <div className="mt-3">
-                    <button className="bg-info bg-gradient border-0 text-white fw-bold px-3 py-2" type="submit">SEND</button>
+                    <button className="bg-info bg-gradient rounded border-0 text-white fw-bold px-3 py-2" type="submit">SEND</button>
                 </div>
                 {successMsg && (
                     <div onClick={clearToast} className="bg-info bg-gradient rounded fixed-bottom" role="alert" style={{position: "sticky", bottom:"10px"}}>
