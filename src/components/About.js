@@ -4,7 +4,7 @@ import headshot from '../assets/headshot.jpg';
 const About = () => {
     return (
         <section className="text-center col-9 col-md-7 col-lg-5 mx-auto my-4">
-            <img className="col-10 col-md-7 rounded-circle" src={headshot} alt="A Janae smiling in business casual wear"/>
+            <img className="col-10 col-md-7 rounded-circle" src={headshot} style={{maxWidth:"324px"}} alt="A Janae smiling in business casual wear"/>
             <h1 className="text-primary mt-2">Janae Welsh</h1>
             <h3>Software Engineer</h3>
             <div className='text-center my-3 my-lg-4 d-flex justify-content-around justify-content-md-between mx-md-5 col-lg-8 mx-lg-auto'>
@@ -24,7 +24,7 @@ const About = () => {
                     </svg>
                 </a>
             </div>
-            <p >
+            <p>
                 Full-stack <span className="text-primary">JavaScript</span> software engineer with honed <span className="text-primary">research</span>, <span className="text-primary">problem-solving</span> and <span className="text-primary">communication</span> skills, developed during my English BA and work in the education sector.
             </p>
             <LazyLoad offset={0} once>

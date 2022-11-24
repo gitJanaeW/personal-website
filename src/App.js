@@ -1,7 +1,6 @@
 import React, {Suspense} from "react";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Nav from "./components/Nav";
-import Loading from "./components/Loading";
 const About = React.lazy(() => import('./components/About'));
 const Portfolio = React.lazy(() => import('./components/Portfolio'));
 const Contact = React.lazy(() => import('./components/Contact'));
@@ -11,24 +10,24 @@ const Footer = React.lazy(() => import("./components/Footer"));
 const App = () => {
     return(
         <div>
-            <Router>
+            <BrowserRouter>
                 <Nav/>
                     <Routes>
                         <Route path="/" element={
-                            <Suspense fallback={<Loading/>}><About/></Suspense>
+                            <Suspense fallback={<div style={{minHeight:"60vh"}}></div>}><About/></Suspense>
                         }/>
                         <Route path="/portfolio" element={
-                            <Suspense fallback={<Loading/>}><Portfolio/></Suspense>
+                            <Suspense fallback={<div style={{minHeight:"60vh"}}></div>}><Portfolio/></Suspense>
                         }/>
                         <Route path="/contact" element={
-                            <Suspense fallback={<Loading/>}><Contact/></Suspense>
+                            <Suspense fallback={<div style={{minHeight:"60vh"}}></div>}><Contact/></Suspense>
                         }/>
                         <Route path="/resume" element={
-                            <Suspense fallback={<Loading/>}><Resume/></Suspense>
+                            <Suspense fallback={<div style={{minHeight:"60vh"}}></div>}><Resume/></Suspense>
                         }/>
                     </Routes>
                 <Footer/>
-            </Router>
+            </BrowserRouter>
         </div>
     );
 }

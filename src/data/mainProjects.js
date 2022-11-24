@@ -17,7 +17,7 @@ const mainProjects = [
         key: "rescue-chow",
         name: "Rescue Chow",
         description: "A MERN stack application with Stripe functionality. Made in 2 weeks with 3 peers. Rescue Chow allows you to purchase animal treats while sending 25% of the proceeds to charity.",
-        link: "/",
+        link: "",
         img: rescueChow,
         imgAlt: "The landing page of Rescue Chow",
         technologies: "Mongoose | Express | React",
@@ -28,8 +28,7 @@ const mainProjects = [
         name: "upGrad",
         description: "A full-stack application with Handlebars.js. Made in a week with 2 peers. Upgrad is the social media app for graduate student where projects are shared for the sake of research, collaboration and critiques.",
         link: "/",
-        // Image sourced from: cdn.lifehack.org
-        img: "../images/rescue-chow.jpg",
+        img: rescueChow,
         imgAlt: "The landing page of upGrad",
         technologies: "Express | Sequelize | Handlebars",
         status: "Deployed"

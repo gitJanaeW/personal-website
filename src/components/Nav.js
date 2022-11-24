@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Toast} from 'bootstrap';
 import {Link} from "react-router-dom";
 
 const Nav = () => {

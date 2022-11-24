@@ -1,9 +1,6 @@
 import {useState, useRef} from "react";
 import {captializeFirstChar, validateEmail} from "../utils/helpers";
-import {AiFillPhone, AiFillGithub} from 'react-icons/ai';
-import {TbConfetti} from 'react-icons/tb';
-import {MdEmail} from 'react-icons/md';
-import {FaLinkedinIn} from 'react-icons/fa';
+import {TbConfetti} from "react-icons/tb";
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -29,7 +26,7 @@ const Contact = () => {
     const clearToast = (e) => {
         e.preventDefault();
         if(e.target.value==="╳"){
-            e.currentTarget.className = "hide toast"
+            e.currentTarget.setAttribute("hidden", true);
         }
     };
     const form = useRef();
@@ -47,28 +44,26 @@ const Contact = () => {
     return(
         <section id="contact" className="d-flex flex-wrap col-9 mx-auto my-5">
             <div className="col-11 col-lg-5 mx-auto text-center text-md-start">
-                <h1>
-                    Reach Out
-                </h1>
+                <h1>Reach Out</h1>
                 <p>
                     I'm eager to become an asset to your team! Reach out to me on whatever platform is most convenient and I will be happy to connect with you.
                 </p>    
                 <div className="text-lg mt-4 max-sm:text-base">
-                    <div className="d-flex align-items-center">
-                        <AiFillPhone/>
-                        <a href="tel:289-200-2721" className="px-2 my-lg-2">289-200-2721</a>
+                    <div className="d-flex flex-column flex-md-row">
+                        <p className="mt-2 mt-md-0 mb-0 mx-1">Phone:</p>
+                        <a href="tel:289-200-2721">289-200-2721</a>
                     </div>
-                    <div className="d-flex align-items-center">
-                        <MdEmail/>
-                        <a className="px-2 my-lg-2" href="mailto: janae.wel@gmail.com" target="blank"> janae.wel@gmail.com</a>
+                    <div className="d-flex flex-column flex-md-row">
+                        <p className="mt-2 mt-md-0 mb-0 mx-1">Email:</p>
+                        <a href="mailto: janae.wel@gmail.com" target="blank"> janae.wel@gmail.com</a>
                     </div>
-                    <div className="d-flex align-items-center">
-                        <AiFillGithub/>
-                        <a className="px-2 my-lg-2" href="https://githubcom/gitJanaeW?tab=repositories" target="blank">GitHub</a>
+                    <div className="d-flex flex-column flex-md-row">
+                        <p className="mt-2 mt-md-0 mb-0 mx-1">GitHub:</p>
+                        <a href="https://githubcom/gitJanaeW?tab=repositories" target="blank">GitHub</a>
                     </div>
-                    <div className="d-flex align-items-center">
-                        <FaLinkedinIn/>
-                        <a className="px-2 my-lg-2" href="https://www.linkedin.com/in/janae-welsh-01a52a23a/" target="blank">LinkedIn</a>
+                    <div className="d-flex flex-column flex-md-row">
+                        <p className="mt-2 mt-md-0 mb-0 mx-1">LinkedIn:</p>
+                        <a href="https://www.linkedin.com/in/janae-welsh-01a52a23a/" target="blank">LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -96,13 +91,13 @@ const Contact = () => {
                     <button className="bg-info bg-gradient rounded border-0 text-white fw-bold px-3 py-2" type="submit">SEND</button>
                 </div>
                 {successMsg && (
-                    <div onClick={clearToast} className="bg-info bg-gradient rounded fixed-bottom" role="alert" style={{position: "sticky", bottom:"10px"}}>
-                        <div className="toast-header my-4 d-flex justify-content-between align-items-center">
+                    <div onClick={clearToast} className="bg-secondary text-black rounded fixed-bottom" role="alert" style={{position: "sticky", bottom:"10px", boxShadow:"0 2px 10px black"}}>
+                        <div className="my-4 d-flex justify-content-between align-items-center">
                             <div className="d-flex align-items-center px-2">
                                 <TbConfetti/>
-                                <strong className="toast-body">: Email sent!</strong>
+                                <strong>: Email sent!</strong>
                             </div>
-                            <input type="button" className="close bg-primary border-0 rounded p-3 text-white" value="╳"></input>
+                            <input type="button" className="close bg-primary border-0 p-3 text-white" style={{borderRadius:"0 5px 5px 0"}} value="╳"></input>
                         </div>
                     </div>
                 )}
