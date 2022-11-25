@@ -6,7 +6,6 @@ import emailjs from '@emailjs/browser';
 const Contact = () => {
     const [errorMsg, setErrorMsg] = useState();
     const [successMsg, setSuccessMsg] = useState();
-    // check for live changes to the state of the form
     const getEmailState = (e) => {
         if (e.target.name === 'email') {
             const isValid = validateEmail(e.target.value);
@@ -15,12 +14,12 @@ const Contact = () => {
             } else {
                 setErrorMsg('');
             }
+            return;
+        } 
+        if (!e.target.value.length) {
+            setErrorMsg(`${e.target.name} is required.`);
         } else {
-            if (!e.target.value.length) {
-                setErrorMsg(`${e.target.name} is required.`);
-            } else {
-                setErrorMsg('');
-            }
+            setErrorMsg('');
         }
     };
     const clearToast = (e) => {
@@ -97,10 +96,19 @@ const Contact = () => {
                                 <TbConfetti/>
                                 <strong>: Email sent!</strong>
                             </div>
-                            <input type="button" className="close bg-primary border-0 p-3 text-white" style={{borderRadius:"0 5px 5px 0"}} value="╳"></input>
+                            <input type="button" className="bg-primary border-0 p-3 text-white" style={{borderRadius:"0 5px 5px 0"}} value="╳"></input>
                         </div>
                     </div>
                 )}
+                <div onClick={clearToast} className="bg-secondary text-black rounded fixed-bottom" role="alert" style={{position: "sticky", bottom:"10px", boxShadow:"0 2px 10px black"}}>
+                        <div className="my-4 d-flex justify-content-between align-items-center">
+                            <div className="d-flex align-items-center px-2">
+                                <TbConfetti/>
+                                <strong>: Email sent!</strong>
+                            </div>
+                            <input type="button" className="bg-primary border-0 p-3 text-white" style={{borderRadius:"0 5px 5px 0"}} value="╳"></input>
+                        </div>
+                    </div>
             </form>
         </section>
     );

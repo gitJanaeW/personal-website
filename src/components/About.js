@@ -3,8 +3,8 @@ import headshot from '../assets/headshot.jpg';
 
 const About = () => {
     return (
-        <section className="text-center col-9 col-md-7 col-lg-5 mx-auto my-4">
-            <img className="col-10 col-md-7 rounded-circle" src={headshot} style={{maxWidth:"324px"}} alt="A Janae smiling in business casual wear"/>
+        <section className="text-center col-9 col-md-7 col-lg-5 mx-auto my-4" style={{maxHeight:"770px"}}>
+            <img className="col-10 col-md-7 rounded-circle" src={headshot} style={{maxWidth:"324px"}} alt="Janae smiling in business casual wear"/>
             <h1 className="text-primary mt-2">Janae Welsh</h1>
             <h3>Software Engineer</h3>
             <div className='text-center my-3 my-lg-4 d-flex justify-content-around justify-content-md-between mx-md-5 col-lg-8 mx-lg-auto'>
@@ -27,8 +27,9 @@ const About = () => {
             <p>
                 Full-stack <span className="text-primary">JavaScript</span> software engineer with honed <span className="text-primary">research</span>, <span className="text-primary">problem-solving</span> and <span className="text-primary">communication</span> skills, developed during my English BA and work in the education sector.
             </p>
-            <LazyLoad offset={0} once>
-                <div>
+            
+                <div style={{minHeight:"200px"}}>
+                    <LazyLoad offset={0} once>
                     <h3>About Me</h3>
                     <p>
                         As a <span className="text-primary">creative</span>, I'm always eager to take on projects of any kind and breathe life and passion into them. Fueled by my avid interest in the mechanics of coding, I'm consistently aiming to broaden my <span className="text-primary">knowledge</span> and technical skillset. 
@@ -36,8 +37,9 @@ const About = () => {
                     <p>
                         I would love to talk to you about how I can offer my <span className="text-primary">dedication</span> and <span className="text-primary">continuing growth</span> to your team. 
                     </p>
+                    </LazyLoad>
                 </div>
-            </LazyLoad>
+            
         </section>
     );
 }

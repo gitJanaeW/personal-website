@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {Toast} from 'bootstrap';
 import {Link} from "react-router-dom";
 
 const Nav = () => {
@@ -13,7 +12,7 @@ const Nav = () => {
         setPortfolio(path === "/portfolio");
         setContact(path === "/contact");
         setResume(path ==="/resume");
-    }
+    };
     return(
         <nav onClick={highlight} className="navbar navbar-expand-lg navbar-light px-4 py-4">
             <Link to="/">
@@ -28,16 +27,16 @@ const Nav = () => {
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <div className="navbar-nav" id="navbar-links">
                         <Link to="/">
-                            <h2 className={`${clickedAbout && "bg-info bg-gradient"} nav-link fw-bold px-2`} href="#">ABOUT ME</h2>
+                            <h2 className={`${clickedAbout && "bg-info bg-gradient"} nav-link fw-bold px-2`}>ABOUT ME</h2>
                         </Link>
                         <Link to="/portfolio">
-                            <h2 className={`${clickedPortfolio && "bg-info bg-gradient"} nav-link fw-bold px-2`} href="#">PORTFOLIO</h2>
+                            <h2 className={`${clickedPortfolio && "bg-info bg-gradient"} nav-link fw-bold px-2`}>PORTFOLIO</h2>
                         </Link>
                         <Link to="/contact">
-                            <h2 className={`${clickedContact && "bg-info bg-gradient"} nav-link fw-bold px-2`} href="#">CONTACT</h2>
+                            <h2 className={`${clickedContact && "bg-info bg-gradient"} nav-link fw-bold px-2`}>CONTACT</h2>
                         </Link>
                         <Link to="/resume">
-                            <h2 className={`${clickedResume && "bg-info bg-gradient"} nav-link fw-bold px-2 ml-2`} href="#">RESUME</h2>
+                            <h2 className={`${clickedResume && "bg-info bg-gradient"} nav-link fw-bold px-2 ml-2`}>RESUME</h2>
                         </Link>
                     </div>
                 </div>
@@ -45,5 +44,4 @@ const Nav = () => {
         </nav>
     )
 } 
-
 export default Nav;

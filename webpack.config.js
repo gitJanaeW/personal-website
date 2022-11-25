@@ -16,7 +16,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'src'),
         use: ["babel-loader"],
       },
       {
@@ -44,7 +44,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g)$/i,
         use: [
           {
             loader: 'file-loader',
