@@ -1,14 +1,16 @@
 import LazyLoad from "react-lazyload";
 import technologies from "../assets/technologies.jpg";
+import resumePDF from '../assets/JanaeWelsh_Resume.pdf';
+import {IoMdDownload} from 'react-icons/io';
 
 const Resume = () => {
     return(
         <section id="resume" className="col-lg-8 mx-auto my-4 text-center">
-            <h1>Resume</h1>
-            {/* <a href={resumePDF} download="janae-welsh-resume"
-                className="w-fit h-fit text-sm font-bold tracking-wide bg-gradient-to-r from-cyan-500 text- to-teal-500 p-2 md:p-3 rounded-lg">
-                <IoMdDownload/>
-            </a> */}
+            <h1 className="my-3">Resume</h1>
+            <a href={resumePDF} download="JanaeWelsh_Resume"
+                className="text-white bg-info bg-gradient py-1 px-2 rounded">
+                Download <IoMdDownload/>
+            </a>
             <div>
                 <div>
                     <h2 className="my-4">TECHNICAL SKILLS</h2>  

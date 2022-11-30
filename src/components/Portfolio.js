@@ -23,7 +23,7 @@ const Portfolio = () => {
                     Check out my most pivotal projects from newest to oldest in their respective categories. You can also browse through my large collection of projects on 
                     <a href="https://github.com/gitJanaeW?tab=repositories" target="_blank" rel="noreferrer"> Github</a>!
                 </p>
-                <p className="text-primary">***Please note that, I am currently touching up kinks in my main projects. These changes have not been deployed.***</p>
+                <p className="text-primary">***Please note that due to recent changes with Heroku, most of my main projects are not deployed. Click on undeployed projects to go to their GitHub page instead where you can download them or read their code. I am actively working on redeployment.***</p>
             </div>
             
             <div className="d-flex flex-column flex-wrap">

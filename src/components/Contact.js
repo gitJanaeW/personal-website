@@ -100,15 +100,6 @@ const Contact = () => {
                         </div>
                     </div>
                 )}
-                <div onClick={clearToast} className="bg-secondary text-black rounded fixed-bottom" role="alert" style={{position: "sticky", bottom:"10px", boxShadow:"0 2px 10px black"}}>
-                        <div className="my-4 d-flex justify-content-between align-items-center">
-                            <div className="d-flex align-items-center px-2">
-                                <TbConfetti/>
-                                <strong>: Email sent!</strong>
-                            </div>
-                            <input type="button" className="bg-primary border-0 p-3 text-white" style={{borderRadius:"0 5px 5px 0"}} value="╳"></input>
-                        </div>
-                    </div>
             </form>
         </section>
     );

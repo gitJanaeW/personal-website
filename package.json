@@ -1,11 +1,11 @@
 {
-  "name": "tailwind-react-webpack",
+  "name": "personal-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "My personal website with significant portfolio projects",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve --mode development --hot --history-api-fallback",
+    "start": "node index.js",
     "build": "webpack --mode production"
   },
   "repository": {
