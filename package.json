@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "My personal website with significant portfolio projects",
   "main": "index.js",
+  "engines": {
+    "node": "16.16.0",
+    "npm": "8.11.0"
+  },
   "scripts": {
     "dev": "webpack serve --mode development --hot --history-api-fallback",
     "start": "node index.js",
